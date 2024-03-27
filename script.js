@@ -14,6 +14,7 @@ const body_parser = require('body-parser')
 
 const index_router = require('./routes/index_router')
 const author_router = require('./routes/author_router')
+const book_router = require('./routes/book_router')
 
 
 app.set('view engine', "ejs") 
@@ -25,5 +26,6 @@ app.use(body_parser.urlencoded({limit : '10mb', extended : false}))
 
 app.use("/", index_router)
 app.use("/authors", author_router)
+app.use('/books', book_router)
 
 app.listen(3000)
